@@ -1,5 +1,6 @@
 import Navbar from "./Navbar"
 import Sidebar from "./Sidebar"
+import Tasks from "./Tasks"
 import {
   ArrowRight01Icon,
   SquareLock02Icon,
@@ -13,11 +14,11 @@ import {
 
 const Overview = () => {
   return (
-    <div className="flex">
+    <div className="flex h-screen overflow-hidden">
       <div>
         <Sidebar />
       </div>
-      <div className="w-full">
+      <div className="w-full overflow-y-auto">
         <Navbar />
         <section className="flex md:justify-between items-center gap-10 px-7 py-5">
           {/* first row */}
@@ -167,6 +168,10 @@ const Overview = () => {
               New Task
             </button>
           </div>
+        </section>
+
+        <section className="px-7 py-5">
+          <Tasks />
         </section>
       </div>
     </div>

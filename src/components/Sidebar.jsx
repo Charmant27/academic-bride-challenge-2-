@@ -12,7 +12,7 @@ import {
 const Sidebar = () => {
     return (
         <section
-            className='bg-white h-screen border-r border-r-gray-300 flex flex-col gap-12 scroll-smooth'
+            className='bg-white h-screen border-r border-r-gray-300 flex flex-col gap-12'
         >
             {/* logo */}
             <div className='px-7 pt-4'>
