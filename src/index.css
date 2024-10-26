@@ -6,3 +6,7 @@
 body {
   @apply bg-gray-200
 }
+
+.filter-btns {
+  @apply hover:font-bold hover:transition hover:ease-in-out hover:transform hover:delay-150
+}
