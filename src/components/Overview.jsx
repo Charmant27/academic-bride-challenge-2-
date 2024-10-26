@@ -6,7 +6,9 @@ import {
   ArrowDown01Icon,
   Link04Icon,
   TextCenterlineMiddleIcon,
-  GridViewIcon
+  GridViewIcon,
+  FilterHorizontalIcon,
+  PlusSignIcon
 } from 'hugeicons-react'
 
 const Overview = () => {
@@ -120,6 +122,51 @@ const Overview = () => {
             </div>
           </div>
 
+        </section>
+
+        <section className="bg-white rounded-lg flex items-center md:justify-between gap-10 mx-7 my-5 px-4 py-4">
+          <div className="flex items-center gap-8">
+            <button
+              className="text-gray-500 hover:text-[#635ac8] text-base transition ease-in-out transform delay-150"
+            >
+              All Tasks <span className="bg-gray-200 px-2 py-1 rounded-lg">23</span>
+            </button>
+            <button
+              className="text-gray-500 hover:text-[#635ac8] text-base transition ease-in-out transform delay-150"
+            >
+              To do <span className="bg-gray-200 px-2 py-1 rounded-lg">3</span>
+            </button>
+            <button
+              className="text-gray-500 hover:text-[#635ac8] text-base transition ease-in-out transform delay-150"
+            >
+              In Progress <span className="bg-gray-200 px-2 py-1 rounded-lg">6</span>
+            </button>
+            <button
+              className="text-gray-500 hover:text-[#635ac8] text-base transition ease-in-out transform delay-150"
+            >
+              Completed <span className="bg-gray-200 px-2 py-1 rounded-lg">14</span>
+            </button>
+          </div>
+          <div className="flex items-center gap-5">
+            <button className="text-gray-500 text-base font-light flex items-center gap-1 border border-gray-300 p-2 rounded-lg">
+              <span>
+                <FilterHorizontalIcon
+                  size={18}
+                  variant={"stroke"}
+                />
+              </span>
+              Filter & Sort
+            </button>
+            <button className="text-gray-500 text-base font-light flex items-center gap-1 border border-gray-300 p-2 rounded-lg">
+              <span>
+                <PlusSignIcon
+                  size={18}
+                  variant={"stroke"}
+                />
+              </span>
+              New Task
+            </button>
+          </div>
         </section>
       </div>
     </div>
