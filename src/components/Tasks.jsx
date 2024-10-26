@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
+import { useGlobalContext } from '../context/Context';
 import { MoreVerticalCircle01Icon, MessageAdd02Icon } from 'hugeicons-react';
 
 const Tasks = () => {
     const [tasks, setTasks] = useState([])
+    const { mode } = useGlobalContext()
 
     useEffect(() => {
         const getTasks = async () => {
@@ -22,7 +24,7 @@ const Tasks = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-3">
             {tasks.map((task) => {
                 return (
-                    <div className="bg-white px-5 py-4 flex flex-col gap-2 rounded-lg">
+                    <div className={`${mode === 'light' ? 'bg-white' : 'bg-black text-[#8b939f]'} px-5 py-4 flex flex-col gap-2 rounded-lg`}>
                         <div className="flex items-center justify-between">
                             {task.completed === false ? (
                                 <h2
@@ -48,12 +50,21 @@ const Tasks = () => {
                         <h1>
                             {task.todo}
                         </h1>
-                        <div className="w-full h-0.5 bg-[#fafafb]"></div>
+                        <div className={`${mode === 'light' ? ' g-[#fafafb]' : 'bg-[#8b939f]'} w-full h-0.5`}></div>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center">
-                                <img src="/images/profile.jpg" alt="user-profile" className="object-cover w-8 h-8 rounded-[50%] border border-gray-200" />
-                                <img src="/images/profile2.jpg" alt="user-profile" className="object-cover w-8 h-8 rounded-[50%] border border-gray-200 ml-[-10px]" />
-                                <img src="/images/profile3.jpg" alt="user-profile" className="object-cover w-8 h-8 rounded-[50%] border border-gray-200 ml-[-10px]" />
+                                <img
+                                    src="/images/profile.jpg"
+                                    alt="user-profile"
+                                    className={`${mode === 'light' ? 'border-gray-200' : 'border-black'} object-cover w-8 h-8 rounded-[50%] border`} />
+                                <img
+                                    src="/images/profile2.jpg"
+                                    alt="user-profile"
+                                    className={`${mode === 'light' ? 'border-gray-200' : 'border-black'} object-cover w-8 h-8 rounded-[50%] border ml-[-10px]`} />
+                                <img
+                                    src="/images/profile3.jpg"
+                                    alt="user-profile"
+                                    className={`${mode === 'light' ? 'border-gray-200' : 'border-black'} object-cover w-8 h-8 rounded-[50%] border ml-[-10px]`} />
                             </div>
                             <div className="flex items-center gap-3">
                                 <div>

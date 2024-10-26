@@ -1,3 +1,4 @@
+import { useGlobalContext } from '../context/Context';
 import Navbar from "./Navbar"
 import Sidebar from "./Sidebar"
 import Tasks from "./Tasks"
@@ -13,6 +14,8 @@ import {
 } from 'hugeicons-react'
 
 const Overview = () => {
+  const { mode } = useGlobalContext()
+
   return (
     <div className="flex h-screen overflow-hidden">
       <div>
@@ -65,24 +68,24 @@ const Overview = () => {
                 <img
                   src="/images/profile.jpg"
                   alt="profile"
-                  className="w-8 h-8 rounded-[50%] border border-gray-200 object-cover"
+                  className={`${mode === 'light' ? 'border-gray-200' : 'border-gray-900'} w-8 h-8 rounded-[50%] border object-cover`}
                 />
                 <img
                   src="/images/profile2.jpg"
                   alt="profile"
-                  className="w-8 h-8 rounded-[50%] border border-gray-200 ml-[-10px] object-cover"
+                  className={`${mode === 'light' ? 'border-gray-200' : 'border-gray-900'} w-8 h-8 rounded-[50%] border object-cover ml-[-10px]`}
                 />
                 <img
                   src="/images/profile3.jpg"
                   alt="profile"
-                  className="w-8 h-8 rounded-[50%] border border-gray-200 ml-[-10px]  object-cover"
+                  className={`${mode === 'light' ? 'border-gray-200' : 'border-gray-900'} w-8 h-8 rounded-[50%] border object-cover ml-[-10px]`}
                 />
                 <img src="/images/profile4.jpg"
                   alt="profile"
-                  className="w-8 h-8 rounded-[50%] border border-gray-200 ml-[-10px]  object-cover"
+                  className={`${mode === 'light' ? 'border-gray-200' : 'border-gray-900'} w-8 h-8 rounded-[50%] border object-cover ml-[-10px]`}
                 />
                 <button
-                  className="w-8 h-8 bg-slate-400 rounded-[50%] border border-gray-200 ml-[-10px]  text-sm text-white"
+                  className={`${mode === 'light' ? 'border-gray-200' : 'border-gray-900'} w-8 h-8 rounded-[50%] border object-cover bg-slate-400 ml-[-10px]`}
                 >
                   +2
                 </button>
@@ -125,27 +128,27 @@ const Overview = () => {
 
         </section>
 
-        <section className="bg-white rounded-lg flex items-center md:justify-between gap-10 mx-7 my-5 px-4 py-4">
+        <section className={`${mode==='light' ? 'bg-white' : 'bg-black'} rounded-lg flex items-center md:justify-between gap-10 mx-7 my-5 px-4 py-4`}>
           <div className="flex items-center gap-8">
             <button
-              className="text-gray-500 hover:text-[#635ac8] text-base transition ease-in-out transform delay-150"
+              className={`${mode==='light' ? 'text-gray-500' : 'text-white'} hover:text-[#635ac8] text-base transition ease-in-out transform delay-150`}
             >
-              All Tasks <span className="bg-gray-200 px-2 py-1 rounded-lg">23</span>
+              All Tasks <span className={`${mode === 'light' ? 'bg-gray-200 px-2 py-1 rounded-lg' : 'bg-gray-900'}`}>23</span>
             </button>
             <button
-              className="text-gray-500 hover:text-[#635ac8] text-base transition ease-in-out transform delay-150"
+              className={`${mode==='light' ? 'text-gray-500' : 'text-white'} hover:text-[#635ac8] text-base transition ease-in-out transform delay-150`}
             >
-              To do <span className="bg-gray-200 px-2 py-1 rounded-lg">3</span>
+              To do <span className={`${mode === 'light' ? 'bg-gray-200 px-2 py-1 rounded-lg' : 'bg-gray-900'}`}>3</span>
             </button>
             <button
-              className="text-gray-500 hover:text-[#635ac8] text-base transition ease-in-out transform delay-150"
+              className={`${mode==='light' ? 'text-gray-500' : 'text-white'} hover:text-[#635ac8] text-base transition ease-in-out transform delay-150`}
             >
-              In Progress <span className="bg-gray-200 px-2 py-1 rounded-lg">6</span>
+              In Progress <span className={`${mode === 'light' ? 'bg-gray-200 px-2 py-1 rounded-lg' : 'bg-gray-900'}`}>6</span>
             </button>
             <button
-              className="text-gray-500 hover:text-[#635ac8] text-base transition ease-in-out transform delay-150"
+              className={`${mode==='light' ? 'text-gray-500' : 'text-white'} hover:text-[#635ac8] text-base transition ease-in-out transform delay-150`}
             >
-              Completed <span className="bg-gray-200 px-2 py-1 rounded-lg">14</span>
+              Completed <span className={`${mode === 'light' ? 'bg-gray-200 px-2 py-1 rounded-lg' : 'bg-gray-900'}`}>14</span>
             </button>
           </div>
           <div className="flex items-center gap-5">

@@ -1,3 +1,5 @@
+import { useGlobalContext } from '../context/Context';
+
 import {
     Search02Icon,
     Moon02Icon,
@@ -6,8 +8,12 @@ import {
 } from 'hugeicons-react';
 
 const Navbar = () => {
+    const { toggle, mode } = useGlobalContext()
+
     return (
-        <nav className='bg-white flex items-center gap-9 md:justify-between px-7 py-4'>
+        <nav className={
+            `${mode === 'light' ? 'bg-white' : 'bg-black text-white'} flex items-center gap-9 md:justify-between px-7 py-4`
+        }>
             <div>
                 <form>
                     <div className='relative'>
@@ -26,17 +32,19 @@ const Navbar = () => {
                 </form>
             </div>
             <div className='flex gap-3'>
-                <button className='p-2 bg-gray-100 rounded-lg'>
+                <button
+                    onClick={toggle}
+                    className={`${mode === 'light' ? 'bg-gray-100 text-[#6b7280]' : 'bg-gray-700 text-gray-200'} p-2 rounded-lg`}>
                     <Moon02Icon
                         size={18}
-                        color={"#6b7280"}
                         variant={"stroke"}
                     />
                 </button>
-                <button className='p-2 bg-gray-100 rounded-lg'>
+                <button
+                    className={`${mode === 'light' ? 'bg-gray-100 text-[#6b7280]' : 'bg-gray-700 text-gray-200'} p-2 rounded-lg`}
+                >
                     <Notification02Icon
                         size={18}
-                        color={"#6b7280"}
                         variant={"stroke"}
                     />
                 </button>

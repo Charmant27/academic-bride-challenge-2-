@@ -1,3 +1,4 @@
+import { useGlobalContext } from '../context/Context';
 import {
     Home03Icon,
     Mail01Icon,
@@ -10,9 +11,11 @@ import {
 } from 'hugeicons-react';
 
 const Sidebar = () => {
+    const {mode} = useGlobalContext()
+
     return (
         <section
-            className='bg-white h-screen border-r border-r-gray-300 flex flex-col gap-12'
+            className={`${mode==='light' ? 'bg-white border-r border-r-gray-300' : 'bg-black border-r border-r-gray-800'} h-screen flex flex-col gap-12`}
         >
             {/* logo */}
             <div className='px-7 pt-4'>
@@ -59,7 +62,7 @@ const Sidebar = () => {
                 </a>
             </div>
 
-            <div className='bg-gray-300 w-full h-[0.5px]'></div>
+            <div className={`${mode==='light' ? 'bg-gray-300' : 'bg-gray-800'} w-full h-[0.5px]`}></div>
 
             {/* users */}
             <div className='px-7 flex flex-col gap-8'>
@@ -87,7 +90,7 @@ const Sidebar = () => {
                 </button>
             </div>
 
-            <div className='bg-gray-300 w-full h-[0.5px]'></div>
+            <div className={`${mode==='light' ? 'bg-gray-300' : 'bg-gray-800'} w-full h-[0.5px]`}></div>
 
             <div
                 className='px-7 pt-8 flex flex-col gap-5'
