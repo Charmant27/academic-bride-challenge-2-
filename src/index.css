@@ -4,9 +4,14 @@
 
 
 body {
-  @apply bg-gray-200
+  @apply bg-gray-200 transition ease-in-out transform delay-150
 }
 
-.filter-btns {
-  @apply hover:font-bold hover:transition hover:ease-in-out hover:transform hover:delay-150
+.light {
+  @apply bg-gray-200 transition ease-in-out transform delay-150
 }
+
+.dark {
+  @apply bg-gray-900 text-white transition ease-in-out transform delay-150
+}
+
