@@ -15,7 +15,7 @@ const Sidebar = () => {
 
     return (
         <section
-            className={`${mode==='light' ? 'bg-white border-r border-r-gray-300' : 'bg-black border-r border-r-gray-800'} h-screen flex flex-col gap-12`}
+            className={`${mode==='light' ? 'bg-white border-r border-r-gray-300' : 'bg-black border-r border-r-gray-800'} hidden h-screen md:flex flex-col gap-12 transition ease-in-out transform delay-150`}
         >
             {/* logo */}
             <div className='px-7 pt-4'>
@@ -62,7 +62,7 @@ const Sidebar = () => {
                 </a>
             </div>
 
-            <div className={`${mode==='light' ? 'bg-gray-300' : 'bg-gray-800'} w-full h-[0.5px]`}></div>
+            <div className={`${mode==='light' ? 'bg-gray-300' : 'bg-gray-800'} w-full h-[0.5px] transition ease-in-out transform delay-150`}></div>
 
             {/* users */}
             <div className='px-7 flex flex-col gap-8'>
@@ -90,7 +90,7 @@ const Sidebar = () => {
                 </button>
             </div>
 
-            <div className={`${mode==='light' ? 'bg-gray-300' : 'bg-gray-800'} w-full h-[0.5px]`}></div>
+            <div className={`${mode==='light' ? 'bg-gray-300' : 'bg-gray-800'} w-full h-[0.5px] transition ease-in-out transform delay-150`}></div>
 
             <div
                 className='px-7 pt-8 flex flex-col gap-5'

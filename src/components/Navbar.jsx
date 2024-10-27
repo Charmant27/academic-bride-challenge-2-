@@ -4,7 +4,8 @@ import {
     Search02Icon,
     Moon02Icon,
     Notification02Icon,
-    UserIcon
+    UserIcon,
+    Menu04Icon
 } from 'hugeicons-react';
 
 const Navbar = () => {
@@ -12,7 +13,7 @@ const Navbar = () => {
 
     return (
         <nav className={
-            `${mode === 'light' ? 'bg-white' : 'bg-black text-white'} flex items-center gap-9 md:justify-between px-7 py-4`
+            `${mode === 'light' ? 'bg-white' : 'bg-black text-white'} flex items-center gap-3 md:justify-between px-7 py-4 transition ease-in-out transform delay-150`
         }>
             <div>
                 <form>
@@ -31,17 +32,17 @@ const Navbar = () => {
                     </div>
                 </form>
             </div>
-            <div className='flex gap-3'>
+            <div className='hidden md:flex gap-3'>
                 <button
                     onClick={toggle}
-                    className={`${mode === 'light' ? 'bg-gray-100 text-[#6b7280]' : 'bg-gray-700 text-gray-200'} p-2 rounded-lg`}>
+                    className={`${mode === 'light' ? 'bg-gray-100 text-[#6b7280]' : 'bg-gray-700 text-gray-200'} p-2 rounded-lg transition ease-in-out transform delay-150`}>
                     <Moon02Icon
                         size={18}
                         variant={"stroke"}
                     />
                 </button>
                 <button
-                    className={`${mode === 'light' ? 'bg-gray-100 text-[#6b7280]' : 'bg-gray-700 text-gray-200'} p-2 rounded-lg`}
+                    className={`${mode === 'light' ? 'bg-gray-100 text-[#6b7280]' : 'bg-gray-700 text-gray-200'} p-2 rounded-lg transition ease-in-out transform delay-150`}
                 >
                     <Notification02Icon
                         size={18}
@@ -55,6 +56,25 @@ const Navbar = () => {
                         variant={"stroke"}
                     />
                 </div>
+            </div>
+            {/* mobile */}
+            <div className='md:hidden'>
+                <button
+                    onClick={toggle}
+                    className={`${mode === 'light' ? 'bg-gray-100 text-[#6b7280]' : 'bg-gray-700 text-gray-200'} p-2 rounded-lg transition ease-in-out transform delay-150`}>
+                    <Moon02Icon
+                        size={18}
+                        variant={"stroke"}
+                    />
+                </button>
+            </div>
+            <div className='md:hidden'>
+                <button className={`${mode === 'light' ? 'text-[#6b7280]' : 'text-gray-200'} rounded-lg transition ease-in-out transform delay-150`}>
+                    <Menu04Icon
+                        size={24}
+                        variant={"stroke"}
+                    />
+                </button>
             </div>
         </nav>
     )

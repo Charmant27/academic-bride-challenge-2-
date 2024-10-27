@@ -24,7 +24,7 @@ const Tasks = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-3">
             {tasks.map((task) => {
                 return (
-                    <div className={`${mode === 'light' ? 'bg-white' : 'bg-black text-[#8b939f]'} px-5 py-4 flex flex-col gap-2 rounded-lg`}>
+                    <div className={`${mode === 'light' ? 'bg-white' : 'bg-black text-[#8b939f]'} px-5 py-4 flex flex-col gap-2 rounded-lg transition ease-in-out transform delay-150`}>
                         <div className="flex items-center justify-between">
                             {task.completed === false ? (
                                 <h2
@@ -50,21 +50,21 @@ const Tasks = () => {
                         <h1>
                             {task.todo}
                         </h1>
-                        <div className={`${mode === 'light' ? ' g-[#fafafb]' : 'bg-[#8b939f]'} w-full h-0.5`}></div>
+                        <div className={`${mode === 'light' ? ' g-[#fafafb]' : 'bg-[#8b939f]'} w-full h-0.5 transition ease-in-out transform delay-150`}></div>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center">
                                 <img
                                     src="/images/profile.jpg"
                                     alt="user-profile"
-                                    className={`${mode === 'light' ? 'border-gray-200' : 'border-black'} object-cover w-8 h-8 rounded-[50%] border`} />
+                                    className={`${mode === 'light' ? 'border-gray-200' : 'border-black'} object-cover w-8 h-8 rounded-[50%] border transition ease-in-out transform delay-150`} />
                                 <img
                                     src="/images/profile2.jpg"
                                     alt="user-profile"
-                                    className={`${mode === 'light' ? 'border-gray-200' : 'border-black'} object-cover w-8 h-8 rounded-[50%] border ml-[-10px]`} />
+                                    className={`${mode === 'light' ? 'border-gray-200' : 'border-black'} object-cover w-8 h-8 rounded-[50%] border ml-[-10px] transition ease-in-out transform delay-150`} />
                                 <img
                                     src="/images/profile3.jpg"
                                     alt="user-profile"
-                                    className={`${mode === 'light' ? 'border-gray-200' : 'border-black'} object-cover w-8 h-8 rounded-[50%] border ml-[-10px]`} />
+                                    className={`${mode === 'light' ? 'border-gray-200' : 'border-black'} object-cover w-8 h-8 rounded-[50%] border ml-[-10px] transition ease-in-out transform delay-150`} />
                             </div>
                             <div className="flex items-center gap-3">
                                 <div>
